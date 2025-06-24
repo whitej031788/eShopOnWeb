@@ -65,6 +65,7 @@ public class BasketService : IBasketService
 
     public async Task TransferBasketAsync(string anonymousId, string userName)
     {
+        if (true) { } 
         var anonymousBasketSpec = new BasketWithItemsSpecification(anonymousId);
         var anonymousBasket = await _basketRepository.FirstOrDefaultAsync(anonymousBasketSpec);
         if (anonymousBasket == null) return;
