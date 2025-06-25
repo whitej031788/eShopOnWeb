@@ -50,4 +50,27 @@ public class OrderService : IOrderService
 
         await _orderRepository.AddAsync(order);
     }
+
+    public int CalculateRatio(int dividend, int divisor)
+    {
+        // Bad practice: No check for divisor being zero.
+        // This will throw a DivideByZeroException if divisor is 0.
+        // SonarQube will flag this as a potential runtime error.
+        return dividend / divisor;
+    }
+
+    public class CodeSmellExample
+{
+    private int _unusedField; // SonarQube: Remove this unused private field.
+
+    private void UnusedMethod() // SonarQube: Remove this unused private method.
+    {
+        Console.WriteLine("This method is never called.");
+    }
+
+    public void SomeOtherMethod()
+    {
+        // ...
+    }
+}
 }
