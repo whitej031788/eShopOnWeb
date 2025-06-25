@@ -50,9 +50,7 @@ public class OrderService : IOrderService
 
         await _orderRepository.AddAsync(order);
     }
-
-    public class BugExample
-{
+    
     private bool GetTrue() => true;
     private bool GetFalse() => false;
 
