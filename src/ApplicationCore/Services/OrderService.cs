@@ -50,7 +50,7 @@ public class OrderService : IOrderService
 
         await _orderRepository.AddAsync(order);
     }
-    
+
     private bool GetTrue() => true;
     private bool GetFalse() => false;
 
@@ -67,5 +67,19 @@ public class OrderService : IOrderService
             Console.WriteLine("Both evaluated");
         }
     }
-}
+
+    public class CodeSmellExample
+    {
+        private int _unusedField; // SonarQube: Remove this unused private field.
+
+        private void UnusedMethod() // SonarQube: Remove this unused private method.
+        {
+            Console.WriteLine("This method is never called.");
+        }
+
+        public void SomeOtherMethod()
+        {
+            // ...
+        }
+    }
 }
