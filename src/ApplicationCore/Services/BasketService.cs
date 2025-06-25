@@ -82,4 +82,65 @@ public class BasketService : IBasketService
         await _basketRepository.UpdateAsync(userBasket);
         await _basketRepository.DeleteAsync(anonymousBasket);
     }
+
+    public class MultidimensionalArrayExample
+{
+    // SonarQube: S2368: Public methods should not have multidimensional array parameters.
+    public void ProcessMatrix(int[,] matrix) 
+    {
+        Console.WriteLine("Processing a 2D matrix...");
+        for (int i = 0; i < matrix.GetLength(0); i++)
+        {
+            for (int j = 0; j < matrix.GetLength(1); j++)
+            {
+                Console.Write($"{matrix[i, j]} ");
+            }
+            Console.WriteLine();
+        }
+    }
+
+    // This method also violates S2368
+    public double CalculateDeterminant(double[,,] cube)
+    {
+        Console.WriteLine("Calculating determinant of a 3D cube (not really, just an example).");
+        // Imagine complex calculations here with the 3D array
+        return 0.0; 
+    }
+
+    // A compliant alternative using a jagged array
+    public void ProcessJaggedArray(int[][] jaggedArray)
+    {
+        Console.WriteLine("Processing a jagged array...");
+        foreach (var row in jaggedArray)
+        {
+            foreach (var item in row)
+            {
+                Console.Write($"{item} ");
+            }
+            Console.WriteLine();
+        }
+    }
+}
+
+// How to call the violating methods
+public class Consumer
+{
+    public void Run()
+    {
+        var example = new MultidimensionalArrayExample();
+
+        int[,] myMatrix = new int[2, 3] { { 1, 2, 3 }, { 4, 5, 6 } };
+        example.ProcessMatrix(myMatrix); // This call triggers the S2368 violation
+
+        double[,,] myCube = new double[2, 2, 2];
+        example.CalculateDeterminant(myCube); // This call also triggers the S2368 violation
+
+        int[][] myJaggedArray = new int[][]
+        {
+            new int[] { 10, 20, 30 },
+            new int[] { 40, 50 }
+        };
+        example.ProcessJaggedArray(myJaggedArray); // This is compliant
+    }
+}
 }

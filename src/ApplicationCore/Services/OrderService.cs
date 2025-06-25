@@ -50,4 +50,24 @@ public class OrderService : IOrderService
 
         await _orderRepository.AddAsync(order);
     }
+
+    public class BugExample
+{
+    private bool GetTrue() => true;
+    private bool GetFalse() => false;
+
+    public void CheckCondition()
+    {
+        // SonarQube: Short-circuit logic should be used in boolean contexts.
+        if (GetTrue() | GetFalse()) // Both GetTrue() and GetFalse() will always be evaluated
+        {
+            Console.WriteLine("Both evaluated");
+        }
+
+        if (GetFalse() & GetTrue()) // Both GetFalse() and GetTrue() will always be evaluated
+        {
+            Console.WriteLine("Both evaluated");
+        }
+    }
+}
 }
