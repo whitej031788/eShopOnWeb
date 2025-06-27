@@ -51,26 +51,36 @@ public class OrderService : IOrderService
         await _orderRepository.AddAsync(order);
     }
 
-    public int CalculateRatio(int dividend, int divisor)
+    private bool GetTrue() => true;
+    private bool GetFalse() => false;
+
+    public void CheckCondition()
     {
-        // Bad practice: No check for divisor being zero.
-        // This will throw a DivideByZeroException if divisor is 0.
-        // SonarQube will flag this as a potential runtime error.
-        return dividend / divisor;
+        // SonarQube: Short-circuit logic should be used in boolean contexts.
+        if (GetTrue() | GetFalse()) // Both GetTrue() and GetFalse() will always be evaluated
+        {
+            Console.WriteLine("Both evaluated");
+        }
+
+        if (GetFalse() & GetTrue()) // Both GetFalse() and GetTrue() will always be evaluated
+        {
+            Console.WriteLine("Both evaluated");
+        }
     }
 
     public class CodeSmellExample
-{
-    private int _unusedField; // SonarQube: Remove this unused private field.
-
-    private void UnusedMethod() // SonarQube: Remove this unused private method.
     {
-        Console.WriteLine("This method is never called.");
-    }
+        private int _unusedField; // SonarQube: Remove this unused private field.
 
-    public void SomeOtherMethod()
-    {
-        // ...
+        private void UnusedMethod() // SonarQube: Remove this unused private method.
+        {
+            Console.WriteLine("This method is never called.");
+        }
+
+        public void SomeOtherMethod()
+        {
+            // ...
+        }
     }
 }
-}
+
