@@ -20,7 +20,7 @@ jobs:
       - name: git fetch all
         shell: powershell
         run: |
-          git fetch --prune --unshallow
+          git fetch --prune --unshallow || || git fetch --prune --all
       - name: git diff
         id: git-diff
         shell: powershell
