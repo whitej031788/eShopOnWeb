@@ -21,7 +21,7 @@ jobs:
         shell: powershell
         run: |
           git fetch --prune --all
-      - name: git diff
+      - name: git diffs
         id: git-diff
         shell: powershell
         run: |
