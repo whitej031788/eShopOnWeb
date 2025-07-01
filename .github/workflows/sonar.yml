@@ -17,6 +17,14 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+      - name: git diff
+        id: git-diff
+        shell: powershell
+        run: |
+          $diff = git diff adad423fd332b45e90fe15a5e67ee8087006a47a 9c3d20db6f515a10ee0e2978b60dd3af2e6798da --name-only
+          Write-Host "Files changed in this commit:"
+          Write-Host $diff
+          echo "::set-output name=changed-files::$diff"
       - name: Set up JDK 17
         uses: actions/setup-java@v4
         with:
