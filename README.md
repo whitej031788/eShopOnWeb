@@ -1,4 +1,4 @@
-# Microsofts eShopOnWeb ASP.NET Core Reference Application
+# Microsofts eShopOnWeb ASP.NET Core Reference Applications
 
 > eShop sample applications have been updated and moved to https://github.com/dotnet/eShop. Active development will continue there. We also recommend the [Reliable Web App](https://learn.microsoft.com/azure/architecture/web-apps/guides/reliable-web-app/overview) patterns guidance for building web apps with enterprise app patterns.
 
