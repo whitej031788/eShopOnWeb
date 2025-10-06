@@ -41,6 +41,10 @@ jobs:
         run: |
           New-Item -Path .\.sonar\scanner -ItemType Directory
           dotnet tool update dotnet-sonarscanner --tool-path .\.sonar\scanner
+      - name: Restore dependencies
+        shell: powershell
+        run: |
+          dotnet restore ./eShopOnWeb.sln
       - name: Build and analyze
         shell: powershell
         run: |
