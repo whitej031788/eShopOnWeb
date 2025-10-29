@@ -38,6 +38,45 @@ public class UserController : ControllerBase
     public async Task<IActionResult> GetCurrentUser() =>
         Ok(await CreateUserInfo(User));
 
+    [Route("getAllUsers")]
+    [HttpGet]
+    [AllowAnonymous]
+    public async Task<IActionResult> GetAllUsers()
+    {
+        if (!ModelState.IsValid)
+        {
+            return BadRequest("Invalid model state");
+        }
+        return Ok(await _userFacade.GetAllUsers());
+    }
+
+    [Route("configuration/{email}")]
+    [HttpPut]
+    [AllowAnonymous]
+    public async Task<IActionResult> SetUserConfigurationById([FromBody] JObject config, string email)
+    {
+        if (!ModelState.IsValid)
+        {
+            return BadRequest("Invalid model state");
+        }
+        var user = HttpContext.User as ClaimsPrincipal;
+        return Ok(await _userFacade.SetUserConfiguration(email, config));
+    }
+
+    [Route("configuration")]
+    [HttpPost]
+    [AllowAnonymous]
+    public async Task<IActionResult> SetUserConfigurationBy([FromBody] string configuration)
+    {
+        if (!ModelState.IsValid)
+        {
+            return BadRequest("Invalid model state");
+        }
+        var user = HttpContext.User as ClaimsPrincipal;
+        return Ok(await _userFacade.SetUserConfiguration(configuration));
+    }
+
+
     [Route("Logout")]
     [HttpPost]
     [Authorize]
