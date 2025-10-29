@@ -45,9 +45,14 @@ jobs:
         shell: powershell
         run: |
           dotnet restore ./eShopOnWeb.sln
+      - name: Restore dependencies
+        shell: powershell
+        run: |
+          dotnet restore ./Everything.sln
       - name: Build and analyze
         shell: powershell
         run: |
           .\.sonar\scanner\dotnet-sonarscanner begin /k:"whitej031788_eShopOnWeb_34fcd487-f4f6-4d2a-a13b-be7a5a9ad2a8" /d:sonar.verbose=true /d:sonar.sca.resolveAsRoot=true /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="${{ secrets.SONAR_HOST_URL }}" /d:sonar.sca.enabled=true
           dotnet build ./eShopOnWeb.sln --configuration Release
+          dotnet build ./Everything.sln --configuration Release
           .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
