@@ -1,0 +1,17 @@
+{
+  "name": "eshoponweb-e2e",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Playwright UI tests for the eShopOnWeb storefront (paired with openapi.yaml for Postman Application Inventory)",
+  "type": "module",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:ui": "playwright test --ui",
+    "report": "playwright show-report",
+    "codegen": "playwright codegen http://localhost:5106"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.48.0"
+  }
+}

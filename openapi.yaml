@@ -1,0 +1,270 @@
+openapi: 3.0.3
+info:
+  title: eShopOnWeb Public API
+  description: >
+    Public REST API for the eShopOnWeb reference application. Exposes catalog
+    items, brands and types, plus JWT authentication. Write operations on catalog
+    items require a bearer token for a user in the `Administrators` role.
+
+    Generated from the source in `src/PublicApi`. Intended to be paired with the
+    storefront Playwright UI suite (`e2e/`) inside Postman Application Inventory.
+  version: 1.0.0
+servers:
+  - url: http://localhost:5200
+    description: Local Docker (docker compose) PublicApi
+tags:
+  - name: AuthEndpoints
+  - name: CatalogItemEndpoints
+  - name: CatalogBrandEndpoints
+  - name: CatalogTypeEndpoints
+paths:
+  /api/authenticate:
+    post:
+      tags: [AuthEndpoints]
+      summary: Authenticates a user
+      description: Returns a JWT token when the supplied credentials are valid.
+      operationId: auth.authenticate
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AuthenticateRequest'
+            example:
+              username: admin@microsoft.com
+              password: Pass@word1
+      responses:
+        '200':
+          description: Authentication result (check the `result` flag)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthenticateResponse'
+  /api/catalog-items:
+    get:
+      tags: [CatalogItemEndpoints]
+      summary: List catalog items (paged)
+      operationId: catalogItems.listPaged
+      parameters:
+        - name: pageSize
+          in: query
+          required: false
+          schema: { type: integer, default: 0 }
+          description: Number of items per page. `0` returns all matching items.
+        - name: pageIndex
+          in: query
+          required: false
+          schema: { type: integer, default: 0 }
+        - name: catalogBrandId
+          in: query
+          required: false
+          schema: { type: integer }
+        - name: catalogTypeId
+          in: query
+          required: false
+          schema: { type: integer }
+      responses:
+        '200':
+          description: A paged list of catalog items
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListPagedCatalogItemResponse'
+    post:
+      tags: [CatalogItemEndpoints]
+      summary: Create a catalog item (admin only)
+      operationId: catalogItems.create
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateCatalogItemRequest'
+      responses:
+        '201':
+          description: The created catalog item
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CatalogItemEnvelope'
+        '401': { description: Missing or invalid token }
+        '403': { description: Authenticated user is not an administrator }
+    put:
+      tags: [CatalogItemEndpoints]
+      summary: Update a catalog item (admin only)
+      operationId: catalogItems.update
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateCatalogItemRequest'
+      responses:
+        '200':
+          description: The updated catalog item
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CatalogItemEnvelope'
+        '401': { description: Missing or invalid token }
+        '403': { description: Authenticated user is not an administrator }
+        '404': { description: Catalog item not found }
+  /api/catalog-items/{catalogItemId}:
+    get:
+      tags: [CatalogItemEndpoints]
+      summary: Get a catalog item by id
+      operationId: catalogItems.getById
+      parameters:
+        - name: catalogItemId
+          in: path
+          required: true
+          schema: { type: integer }
+      responses:
+        '200':
+          description: The requested catalog item
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CatalogItemEnvelope'
+        '404': { description: Catalog item not found }
+    delete:
+      tags: [CatalogItemEndpoints]
+      summary: Delete a catalog item (admin only)
+      operationId: catalogItems.delete
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: catalogItemId
+          in: path
+          required: true
+          schema: { type: integer }
+      responses:
+        '200': { description: Item deleted }
+        '401': { description: Missing or invalid token }
+        '403': { description: Authenticated user is not an administrator }
+        '404': { description: Catalog item not found }
+  /api/catalog-brands:
+    get:
+      tags: [CatalogBrandEndpoints]
+      summary: List catalog brands
+      operationId: catalogBrands.list
+      responses:
+        '200':
+          description: All catalog brands
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListCatalogBrandsResponse'
+  /api/catalog-types:
+    get:
+      tags: [CatalogTypeEndpoints]
+      summary: List catalog types
+      operationId: catalogTypes.list
+      responses:
+        '200':
+          description: All catalog types
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListCatalogTypesResponse'
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: >
+        JWT obtained from `POST /api/authenticate`. Use the `admin@microsoft.com`
+        account (password `Pass@word1`) for administrator-only write operations.
+  schemas:
+    AuthenticateRequest:
+      type: object
+      required: [username, password]
+      properties:
+        username: { type: string, example: admin@microsoft.com }
+        password: { type: string, example: Pass@word1 }
+    AuthenticateResponse:
+      type: object
+      properties:
+        result: { type: boolean, description: True when authentication succeeded }
+        token: { type: string, description: JWT bearer token (empty on failure) }
+        username: { type: string }
+        isLockedOut: { type: boolean }
+        isNotAllowed: { type: boolean }
+        requiresTwoFactor: { type: boolean }
+    CatalogItemDto:
+      type: object
+      properties:
+        id: { type: integer }
+        name: { type: string }
+        description: { type: string }
+        price: { type: number, format: double }
+        pictureUri: { type: string }
+        catalogTypeId: { type: integer }
+        catalogBrandId: { type: integer }
+    CatalogItemEnvelope:
+      type: object
+      properties:
+        catalogItem:
+          $ref: '#/components/schemas/CatalogItemDto'
+    ListPagedCatalogItemResponse:
+      type: object
+      properties:
+        catalogItems:
+          type: array
+          items:
+            $ref: '#/components/schemas/CatalogItemDto'
+        pageCount: { type: integer }
+    CreateCatalogItemRequest:
+      type: object
+      required: [name, catalogBrandId, catalogTypeId, price]
+      properties:
+        catalogBrandId: { type: integer }
+        catalogTypeId: { type: integer }
+        description: { type: string }
+        name: { type: string }
+        pictureUri: { type: string }
+        pictureBase64: { type: string, nullable: true }
+        pictureName: { type: string, nullable: true }
+        price: { type: number, format: double }
+    UpdateCatalogItemRequest:
+      type: object
+      required: [id, name, description, catalogBrandId, catalogTypeId, price]
+      properties:
+        id: { type: integer, minimum: 1, maximum: 10000 }
+        catalogBrandId: { type: integer, minimum: 1, maximum: 10000 }
+        catalogTypeId: { type: integer, minimum: 1, maximum: 10000 }
+        description: { type: string }
+        name: { type: string }
+        pictureBase64: { type: string, nullable: true }
+        pictureUri: { type: string }
+        pictureName: { type: string, nullable: true }
+        price: { type: number, format: double, minimum: 0.01, maximum: 10000 }
+    CatalogBrandDto:
+      type: object
+      properties:
+        id: { type: integer }
+        name: { type: string }
+    ListCatalogBrandsResponse:
+      type: object
+      properties:
+        catalogBrands:
+          type: array
+          items:
+            $ref: '#/components/schemas/CatalogBrandDto'
+    CatalogTypeDto:
+      type: object
+      properties:
+        id: { type: integer }
+        name: { type: string }
+    ListCatalogTypesResponse:
+      type: object
+      properties:
+        catalogTypes:
+          type: array
+          items:
+            $ref: '#/components/schemas/CatalogTypeDto'
