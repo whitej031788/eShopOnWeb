@@ -1,0 +1,4 @@
+name: Localhost
+values:
+  - key: apiBaseUrl
+    value: ''

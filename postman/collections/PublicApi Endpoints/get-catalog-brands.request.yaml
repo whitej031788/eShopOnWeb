@@ -1,0 +1,5 @@
+$kind: 'http-request'
+name: 'GET catalog brands'
+method: 'GET'
+url: '{{apiBaseUrl}}/api/catalog-brands'
+order: 4000

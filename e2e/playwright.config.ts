@@ -1,4 +1,5 @@
 import { defineConfig, devices } from '@playwright/test';
+import { withPostman } from 'postman-playwright';
 
 /**
  * eShopOnWeb storefront E2E config.
@@ -12,7 +13,7 @@ import { defineConfig, devices } from '@playwright/test';
  */
 export const API_BASE_URL = process.env.API_BASE_URL ?? 'http://localhost:5200';
 
-export default defineConfig({
+export default withPostman(defineConfig({
   testDir: './tests',
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
@@ -20,7 +21,7 @@ export default defineConfig({
   reporter: [['html', { open: 'never' }], ['list']],
   use: {
     baseURL: process.env.BASE_URL ?? 'http://localhost:5106',
-    trace: 'on-first-retry',
+    trace: 'on',
     screenshot: 'only-on-failure',
     // The dev/Docker cert is self-signed; we talk to it over http anyway.
     ignoreHTTPSErrors: true,
@@ -28,4 +29,4 @@ export default defineConfig({
   projects: [
     { name: 'chromium', use: { ...devices['Desktop Chrome'] } },
   ],
-});
+}));

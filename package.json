@@ -1,0 +1,13 @@
+{
+  "name": "eshoponweb-root",
+  "private": true,
+  "description": "Root convenience wrapper: delegates test scripts to the e2e/ Playwright project",
+  "scripts": {
+    "test": "npm --prefix e2e test --",
+    "test:headed": "npm --prefix e2e run test:headed --",
+    "test:ui": "npm --prefix e2e run test:ui --",
+    "report": "npm --prefix e2e run report",
+    "codegen": "npm --prefix e2e run codegen",
+    "e2e:install": "npm --prefix e2e install && npm --prefix e2e exec -- playwright install chromium"
+  }
+}

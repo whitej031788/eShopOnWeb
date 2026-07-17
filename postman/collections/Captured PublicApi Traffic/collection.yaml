@@ -1,0 +1,5 @@
+version: '3'
+name: 'Captured PublicApi Traffic'
+type: 'collection'
+auth:
+  type: 'noauth'

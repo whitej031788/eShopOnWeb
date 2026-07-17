@@ -1,0 +1,13 @@
+workspace:
+  id: 4abf7f42-91ab-4471-872e-5d84c9d2165b
+localResources:
+  specs:
+    - ../openapi.yaml
+cloudResources:
+  collections:
+    ../postman/collections/Captured PublicApi Traffic: 54221837-da02fb0c-2d84-4811-80d5-f6c1a35d4d51
+    ../postman/collections/PublicApi Endpoints: 54221837-33c58ed3-9233-483a-b666-4fac3545fecb
+  specs:
+    ../openapi.yaml: be044d62-456f-42e0-87bf-7be5b23b1eb6
+  environments:
+    ../postman/environments/Localhost.environment.yaml: 54221837-e72053f7-3ad9-460d-9654-9528c80cb4c1
