@@ -1,0 +1,55 @@
+$kind: http-request
+url: "{{apiBaseUrl}}/api/authenticate"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: json
+  content: |-
+    {
+      "username": "{{userName}}",
+      "password": "{{password}}"
+    }
+auth:
+  type: noauth
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test('Status code is 200', function () {
+        pm.response.to.have.status(200);
+      });
+
+      pm.test('Response has JSON content-type', function () {
+        pm.expect(pm.response.headers.get('Content-Type')).to.include('application/json');
+      });
+
+      pm.test('Response body contains expected authentication shape', function () {
+        const json = pm.response.json();
+        pm.expect(json).to.be.an('object');
+        pm.expect(json).to.have.property('result');
+        pm.expect(json.result).to.be.a('boolean');
+        pm.expect(json).to.have.property('token');
+        pm.expect(json.token).to.be.a('string').and.not.empty;
+        pm.expect(json).to.have.property('username');
+        pm.expect(json.username).to.be.a('string').and.not.empty;
+        ['isLockedOut', 'isNotAllowed', 'requiresTwoFactor'].forEach(function (key) {
+          pm.expect(json).to.have.property(key);
+          pm.expect(json[key]).to.be.a('boolean');
+        });
+      });
+
+      pm.test('Authentication response indicates success', function () {
+        const json = pm.response.json();
+        pm.expect(json.result).to.eql(true);
+        pm.expect(json.isLockedOut).to.eql(false);
+        pm.expect(json.isNotAllowed).to.eql(false);
+        pm.expect(json.requiresTwoFactor).to.eql(false);
+      });
+
+      pm.test('Store token in collection variable jwtToken', function () {
+        const json = pm.response.json();
+        pm.collectionVariables.set('jwtToken', json.token);
+        pm.expect(pm.collectionVariables.get('jwtToken')).to.eql(json.token);
+      });
+    language: text/javascript
+order: 1000

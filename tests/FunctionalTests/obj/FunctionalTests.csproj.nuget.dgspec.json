@@ -1,34 +1,36 @@
 {
   "format": 1,
   "restore": {
-    "/Users/Jamie.White/Repos/eShopOnWeb/tests/FunctionalTests/FunctionalTests.csproj": {}
+    "/Users/jamie.white@postman.com/Repos/eShopOnWeb/tests/FunctionalTests/FunctionalTests.csproj": {}
   },
   "projects": {
-    "/Users/Jamie.White/Repos/eShopOnWeb/src/ApplicationCore/ApplicationCore.csproj": {
+    "/Users/jamie.white@postman.com/Repos/eShopOnWeb/src/ApplicationCore/ApplicationCore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/Jamie.White/Repos/eShopOnWeb/src/ApplicationCore/ApplicationCore.csproj",
+        "projectUniqueName": "/Users/jamie.white@postman.com/Repos/eShopOnWeb/src/ApplicationCore/ApplicationCore.csproj",
         "projectName": "ApplicationCore",
-        "projectPath": "/Users/Jamie.White/Repos/eShopOnWeb/src/ApplicationCore/ApplicationCore.csproj",
-        "packagesPath": "/Users/Jamie.White/.nuget/packages/",
-        "outputPath": "/Users/Jamie.White/Repos/eShopOnWeb/src/ApplicationCore/obj/",
+        "projectPath": "/Users/jamie.white@postman.com/Repos/eShopOnWeb/src/ApplicationCore/ApplicationCore.csproj",
+        "packagesPath": "/Users/jamie.white@postman.com/.nuget/packages/",
+        "outputPath": "/Users/jamie.white@postman.com/Repos/eShopOnWeb/src/ApplicationCore/obj/",
         "projectStyle": "PackageReference",
         "centralPackageVersionsManagementEnabled": true,
         "configFilePaths": [
-          "/Users/Jamie.White/.nuget/NuGet/NuGet.Config"
+          "/Users/jamie.white@postman.com/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "/opt/homebrew/Cellar/dotnet/10.0.302/libexec/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
+            "framework": "net8.0",
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/Users/Jamie.White/Repos/eShopOnWeb/src/BlazorShared/BlazorShared.csproj": {
-                "projectPath": "/Users/Jamie.White/Repos/eShopOnWeb/src/BlazorShared/BlazorShared.csproj"
+              "/Users/jamie.white@postman.com/Repos/eShopOnWeb/src/BlazorShared/BlazorShared.csproj": {
+                "projectPath": "/Users/jamie.white@postman.com/Repos/eShopOnWeb/src/BlazorShared/BlazorShared.csproj"
               }
             }
           }
@@ -46,10 +48,11 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "10.0.300"
       },
       "frameworks": {
         "net8.0": {
+          "framework": "net8.0",
           "targetAlias": "net8.0",
           "dependencies": {
             "Ardalis.GuardClauses": {
@@ -67,6 +70,11 @@
               "version": "[7.0.0, )",
               "versionCentrallyManaged": true
             },
+            "JsonLogic.Net": {
+              "target": "Package",
+              "version": "[1.1.11, )",
+              "versionCentrallyManaged": true
+            },
             "System.Security.Claims": {
               "target": "Package",
               "version": "[4.3.0, )",
@@ -75,6 +83,11 @@
             "System.Text.Json": {
               "target": "Package",
               "version": "[8.0.3, )",
+              "versionCentrallyManaged": true
+            },
+            "iTextSharp": {
+              "target": "Package",
+              "version": "[5.5.13.4, )",
               "versionCentrallyManaged": true
             }
           },
@@ -93,6 +106,8 @@
             "BuildBundlerMinifier": "3.2.449",
             "coverlet.collector": "6.0.2",
             "FluentValidation": "11.9.0",
+            "iTextSharp": "5.5.13.4",
+            "JsonLogic.Net": "1.1.11",
             "MediatR": "12.0.1",
             "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.2",
             "Microsoft.AspNetCore.Components.Authorization": "8.0.2",
@@ -144,11 +159,11 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[8.0.16, 8.0.16]"
+              "version": "[8.0.29, 8.0.29]"
             },
             {
               "name": "Microsoft.NETCore.App.Ref",
-              "version": "[8.0.16, 8.0.16]"
+              "version": "[8.0.29, 8.0.29]"
             }
           ],
           "frameworkReferences": {
@@ -156,35 +171,37 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/dotnet/sdk/9.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/opt/homebrew/Cellar/dotnet/10.0.302/libexec/sdk/10.0.302/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/Jamie.White/Repos/eShopOnWeb/src/BlazorAdmin/BlazorAdmin.csproj": {
+    "/Users/jamie.white@postman.com/Repos/eShopOnWeb/src/BlazorAdmin/BlazorAdmin.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/Jamie.White/Repos/eShopOnWeb/src/BlazorAdmin/BlazorAdmin.csproj",
+        "projectUniqueName": "/Users/jamie.white@postman.com/Repos/eShopOnWeb/src/BlazorAdmin/BlazorAdmin.csproj",
         "projectName": "BlazorAdmin",
-        "projectPath": "/Users/Jamie.White/Repos/eShopOnWeb/src/BlazorAdmin/BlazorAdmin.csproj",
-        "packagesPath": "/Users/Jamie.White/.nuget/packages/",
-        "outputPath": "/Users/Jamie.White/Repos/eShopOnWeb/src/BlazorAdmin/obj/",
+        "projectPath": "/Users/jamie.white@postman.com/Repos/eShopOnWeb/src/BlazorAdmin/BlazorAdmin.csproj",
+        "packagesPath": "/Users/jamie.white@postman.com/.nuget/packages/",
+        "outputPath": "/Users/jamie.white@postman.com/Repos/eShopOnWeb/src/BlazorAdmin/obj/",
         "projectStyle": "PackageReference",
         "centralPackageVersionsManagementEnabled": true,
         "configFilePaths": [
-          "/Users/Jamie.White/.nuget/NuGet/NuGet.Config"
+          "/Users/jamie.white@postman.com/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "/opt/homebrew/Cellar/dotnet/10.0.302/libexec/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
+            "framework": "net8.0",
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/Users/Jamie.White/Repos/eShopOnWeb/src/BlazorShared/BlazorShared.csproj": {
-                "projectPath": "/Users/Jamie.White/Repos/eShopOnWeb/src/BlazorShared/BlazorShared.csproj"
+              "/Users/jamie.white@postman.com/Repos/eShopOnWeb/src/BlazorShared/BlazorShared.csproj": {
+                "projectPath": "/Users/jamie.white@postman.com/Repos/eShopOnWeb/src/BlazorShared/BlazorShared.csproj"
               }
             }
           }
@@ -202,10 +219,11 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "10.0.300"
       },
       "frameworks": {
         "net8.0": {
+          "framework": "net8.0",
           "targetAlias": "net8.0",
           "dependencies": {
             "BlazorInputFile": {
@@ -251,13 +269,13 @@
             "Microsoft.NET.ILLink.Tasks": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[8.0.16, )",
+              "version": "[8.0.29, )",
               "autoReferenced": true
             },
             "Microsoft.NET.Sdk.WebAssembly.Pack": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[9.0.5, )",
+              "version": "[10.0.10, )",
               "autoReferenced": true
             },
             "System.Net.Http.Json": {
@@ -281,6 +299,8 @@
             "BuildBundlerMinifier": "3.2.449",
             "coverlet.collector": "6.0.2",
             "FluentValidation": "11.9.0",
+            "iTextSharp": "5.5.13.4",
+            "JsonLogic.Net": "1.1.11",
             "MediatR": "12.0.1",
             "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.2",
             "Microsoft.AspNetCore.Components.Authorization": "8.0.2",
@@ -332,15 +352,15 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[8.0.16, 8.0.16]"
+              "version": "[8.0.29, 8.0.29]"
             },
             {
               "name": "Microsoft.NETCore.App.Ref",
-              "version": "[8.0.16, 8.0.16]"
+              "version": "[8.0.29, 8.0.29]"
             },
             {
               "name": "Microsoft.NETCore.App.Runtime.Mono.browser-wasm",
-              "version": "[8.0.16, 8.0.16]"
+              "version": "[8.0.29, 8.0.29]"
             }
           ],
           "frameworkReferences": {
@@ -348,7 +368,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/dotnet/sdk/9.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/opt/homebrew/Cellar/dotnet/10.0.302/libexec/sdk/10.0.302/PortableRuntimeIdentifierGraph.json"
         }
       },
       "runtimes": {
@@ -357,27 +377,29 @@
         }
       }
     },
-    "/Users/Jamie.White/Repos/eShopOnWeb/src/BlazorShared/BlazorShared.csproj": {
+    "/Users/jamie.white@postman.com/Repos/eShopOnWeb/src/BlazorShared/BlazorShared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/Jamie.White/Repos/eShopOnWeb/src/BlazorShared/BlazorShared.csproj",
+        "projectUniqueName": "/Users/jamie.white@postman.com/Repos/eShopOnWeb/src/BlazorShared/BlazorShared.csproj",
         "projectName": "BlazorShared",
-        "projectPath": "/Users/Jamie.White/Repos/eShopOnWeb/src/BlazorShared/BlazorShared.csproj",
-        "packagesPath": "/Users/Jamie.White/.nuget/packages/",
-        "outputPath": "/Users/Jamie.White/Repos/eShopOnWeb/src/BlazorShared/obj/",
+        "projectPath": "/Users/jamie.white@postman.com/Repos/eShopOnWeb/src/BlazorShared/BlazorShared.csproj",
+        "packagesPath": "/Users/jamie.white@postman.com/.nuget/packages/",
+        "outputPath": "/Users/jamie.white@postman.com/Repos/eShopOnWeb/src/BlazorShared/obj/",
         "projectStyle": "PackageReference",
         "centralPackageVersionsManagementEnabled": true,
         "configFilePaths": [
-          "/Users/Jamie.White/.nuget/NuGet/NuGet.Config"
+          "/Users/jamie.white@postman.com/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "/opt/homebrew/Cellar/dotnet/10.0.302/libexec/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
+            "framework": "net8.0",
             "targetAlias": "net8.0",
             "projectReferences": {}
           }
@@ -392,10 +414,11 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "10.0.300"
       },
       "frameworks": {
         "net8.0": {
+          "framework": "net8.0",
           "targetAlias": "net8.0",
           "dependencies": {
             "BlazorInputFile": {
@@ -424,6 +447,8 @@
             "BuildBundlerMinifier": "3.2.449",
             "coverlet.collector": "6.0.2",
             "FluentValidation": "11.9.0",
+            "iTextSharp": "5.5.13.4",
+            "JsonLogic.Net": "1.1.11",
             "MediatR": "12.0.1",
             "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.2",
             "Microsoft.AspNetCore.Components.Authorization": "8.0.2",
@@ -475,11 +500,11 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[8.0.16, 8.0.16]"
+              "version": "[8.0.29, 8.0.29]"
             },
             {
               "name": "Microsoft.NETCore.App.Ref",
-              "version": "[8.0.16, 8.0.16]"
+              "version": "[8.0.29, 8.0.29]"
             }
           ],
           "frameworkReferences": {
@@ -487,35 +512,37 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/dotnet/sdk/9.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/opt/homebrew/Cellar/dotnet/10.0.302/libexec/sdk/10.0.302/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/Jamie.White/Repos/eShopOnWeb/src/Infrastructure/Infrastructure.csproj": {
+    "/Users/jamie.white@postman.com/Repos/eShopOnWeb/src/Infrastructure/Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/Jamie.White/Repos/eShopOnWeb/src/Infrastructure/Infrastructure.csproj",
+        "projectUniqueName": "/Users/jamie.white@postman.com/Repos/eShopOnWeb/src/Infrastructure/Infrastructure.csproj",
         "projectName": "Infrastructure",
-        "projectPath": "/Users/Jamie.White/Repos/eShopOnWeb/src/Infrastructure/Infrastructure.csproj",
-        "packagesPath": "/Users/Jamie.White/.nuget/packages/",
-        "outputPath": "/Users/Jamie.White/Repos/eShopOnWeb/src/Infrastructure/obj/",
+        "projectPath": "/Users/jamie.white@postman.com/Repos/eShopOnWeb/src/Infrastructure/Infrastructure.csproj",
+        "packagesPath": "/Users/jamie.white@postman.com/.nuget/packages/",
+        "outputPath": "/Users/jamie.white@postman.com/Repos/eShopOnWeb/src/Infrastructure/obj/",
         "projectStyle": "PackageReference",
         "centralPackageVersionsManagementEnabled": true,
         "configFilePaths": [
-          "/Users/Jamie.White/.nuget/NuGet/NuGet.Config"
+          "/Users/jamie.white@postman.com/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "/opt/homebrew/Cellar/dotnet/10.0.302/libexec/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
+            "framework": "net8.0",
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/Users/Jamie.White/Repos/eShopOnWeb/src/ApplicationCore/ApplicationCore.csproj": {
-                "projectPath": "/Users/Jamie.White/Repos/eShopOnWeb/src/ApplicationCore/ApplicationCore.csproj"
+              "/Users/jamie.white@postman.com/Repos/eShopOnWeb/src/ApplicationCore/ApplicationCore.csproj": {
+                "projectPath": "/Users/jamie.white@postman.com/Repos/eShopOnWeb/src/ApplicationCore/ApplicationCore.csproj"
               }
             }
           }
@@ -530,10 +557,11 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "10.0.300"
       },
       "frameworks": {
         "net8.0": {
+          "framework": "net8.0",
           "targetAlias": "net8.0",
           "dependencies": {
             "Ardalis.Specification.EntityFrameworkCore": {
@@ -577,6 +605,8 @@
             "BuildBundlerMinifier": "3.2.449",
             "coverlet.collector": "6.0.2",
             "FluentValidation": "11.9.0",
+            "iTextSharp": "5.5.13.4",
+            "JsonLogic.Net": "1.1.11",
             "MediatR": "12.0.1",
             "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.2",
             "Microsoft.AspNetCore.Components.Authorization": "8.0.2",
@@ -628,11 +658,11 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[8.0.16, 8.0.16]"
+              "version": "[8.0.29, 8.0.29]"
             },
             {
               "name": "Microsoft.NETCore.App.Ref",
-              "version": "[8.0.16, 8.0.16]"
+              "version": "[8.0.29, 8.0.29]"
             }
           ],
           "frameworkReferences": {
@@ -640,38 +670,40 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/dotnet/sdk/9.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/opt/homebrew/Cellar/dotnet/10.0.302/libexec/sdk/10.0.302/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/Jamie.White/Repos/eShopOnWeb/src/PublicApi/PublicApi.csproj": {
+    "/Users/jamie.white@postman.com/Repos/eShopOnWeb/src/PublicApi/PublicApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/Jamie.White/Repos/eShopOnWeb/src/PublicApi/PublicApi.csproj",
+        "projectUniqueName": "/Users/jamie.white@postman.com/Repos/eShopOnWeb/src/PublicApi/PublicApi.csproj",
         "projectName": "PublicApi",
-        "projectPath": "/Users/Jamie.White/Repos/eShopOnWeb/src/PublicApi/PublicApi.csproj",
-        "packagesPath": "/Users/Jamie.White/.nuget/packages/",
-        "outputPath": "/Users/Jamie.White/Repos/eShopOnWeb/src/PublicApi/obj/",
+        "projectPath": "/Users/jamie.white@postman.com/Repos/eShopOnWeb/src/PublicApi/PublicApi.csproj",
+        "packagesPath": "/Users/jamie.white@postman.com/.nuget/packages/",
+        "outputPath": "/Users/jamie.white@postman.com/Repos/eShopOnWeb/src/PublicApi/obj/",
         "projectStyle": "PackageReference",
         "centralPackageVersionsManagementEnabled": true,
         "configFilePaths": [
-          "/Users/Jamie.White/.nuget/NuGet/NuGet.Config"
+          "/Users/jamie.white@postman.com/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "/opt/homebrew/Cellar/dotnet/10.0.302/libexec/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
+            "framework": "net8.0",
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/Users/Jamie.White/Repos/eShopOnWeb/src/ApplicationCore/ApplicationCore.csproj": {
-                "projectPath": "/Users/Jamie.White/Repos/eShopOnWeb/src/ApplicationCore/ApplicationCore.csproj"
+              "/Users/jamie.white@postman.com/Repos/eShopOnWeb/src/ApplicationCore/ApplicationCore.csproj": {
+                "projectPath": "/Users/jamie.white@postman.com/Repos/eShopOnWeb/src/ApplicationCore/ApplicationCore.csproj"
               },
-              "/Users/Jamie.White/Repos/eShopOnWeb/src/Infrastructure/Infrastructure.csproj": {
-                "projectPath": "/Users/Jamie.White/Repos/eShopOnWeb/src/Infrastructure/Infrastructure.csproj"
+              "/Users/jamie.white@postman.com/Repos/eShopOnWeb/src/Infrastructure/Infrastructure.csproj": {
+                "projectPath": "/Users/jamie.white@postman.com/Repos/eShopOnWeb/src/Infrastructure/Infrastructure.csproj"
               }
             }
           }
@@ -686,10 +718,11 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "10.0.300"
       },
       "frameworks": {
         "net8.0": {
+          "framework": "net8.0",
           "targetAlias": "net8.0",
           "dependencies": {
             "Ardalis.ApiEndpoints": {
@@ -790,6 +823,8 @@
             "BuildBundlerMinifier": "3.2.449",
             "coverlet.collector": "6.0.2",
             "FluentValidation": "11.9.0",
+            "iTextSharp": "5.5.13.4",
+            "JsonLogic.Net": "1.1.11",
             "MediatR": "12.0.1",
             "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.2",
             "Microsoft.AspNetCore.Components.Authorization": "8.0.2",
@@ -841,15 +876,15 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[8.0.16, 8.0.16]"
+              "version": "[8.0.29, 8.0.29]"
             },
             {
               "name": "Microsoft.NETCore.App.Host.osx-arm64",
-              "version": "[8.0.16, 8.0.16]"
+              "version": "[8.0.29, 8.0.29]"
             },
             {
               "name": "Microsoft.NETCore.App.Ref",
-              "version": "[8.0.16, 8.0.16]"
+              "version": "[8.0.29, 8.0.29]"
             }
           ],
           "frameworkReferences": {
@@ -860,44 +895,46 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/dotnet/sdk/9.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/opt/homebrew/Cellar/dotnet/10.0.302/libexec/sdk/10.0.302/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/Jamie.White/Repos/eShopOnWeb/src/Web/Web.csproj": {
+    "/Users/jamie.white@postman.com/Repos/eShopOnWeb/src/Web/Web.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/Jamie.White/Repos/eShopOnWeb/src/Web/Web.csproj",
+        "projectUniqueName": "/Users/jamie.white@postman.com/Repos/eShopOnWeb/src/Web/Web.csproj",
         "projectName": "Web",
-        "projectPath": "/Users/Jamie.White/Repos/eShopOnWeb/src/Web/Web.csproj",
-        "packagesPath": "/Users/Jamie.White/.nuget/packages/",
-        "outputPath": "/Users/Jamie.White/Repos/eShopOnWeb/src/Web/obj/",
+        "projectPath": "/Users/jamie.white@postman.com/Repos/eShopOnWeb/src/Web/Web.csproj",
+        "packagesPath": "/Users/jamie.white@postman.com/.nuget/packages/",
+        "outputPath": "/Users/jamie.white@postman.com/Repos/eShopOnWeb/src/Web/obj/",
         "projectStyle": "PackageReference",
         "centralPackageVersionsManagementEnabled": true,
         "configFilePaths": [
-          "/Users/Jamie.White/.nuget/NuGet/NuGet.Config"
+          "/Users/jamie.white@postman.com/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "/opt/homebrew/Cellar/dotnet/10.0.302/libexec/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
+            "framework": "net8.0",
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/Users/Jamie.White/Repos/eShopOnWeb/src/ApplicationCore/ApplicationCore.csproj": {
-                "projectPath": "/Users/Jamie.White/Repos/eShopOnWeb/src/ApplicationCore/ApplicationCore.csproj"
+              "/Users/jamie.white@postman.com/Repos/eShopOnWeb/src/ApplicationCore/ApplicationCore.csproj": {
+                "projectPath": "/Users/jamie.white@postman.com/Repos/eShopOnWeb/src/ApplicationCore/ApplicationCore.csproj"
               },
-              "/Users/Jamie.White/Repos/eShopOnWeb/src/BlazorAdmin/BlazorAdmin.csproj": {
-                "projectPath": "/Users/Jamie.White/Repos/eShopOnWeb/src/BlazorAdmin/BlazorAdmin.csproj"
+              "/Users/jamie.white@postman.com/Repos/eShopOnWeb/src/BlazorAdmin/BlazorAdmin.csproj": {
+                "projectPath": "/Users/jamie.white@postman.com/Repos/eShopOnWeb/src/BlazorAdmin/BlazorAdmin.csproj"
               },
-              "/Users/Jamie.White/Repos/eShopOnWeb/src/BlazorShared/BlazorShared.csproj": {
-                "projectPath": "/Users/Jamie.White/Repos/eShopOnWeb/src/BlazorShared/BlazorShared.csproj"
+              "/Users/jamie.white@postman.com/Repos/eShopOnWeb/src/BlazorShared/BlazorShared.csproj": {
+                "projectPath": "/Users/jamie.white@postman.com/Repos/eShopOnWeb/src/BlazorShared/BlazorShared.csproj"
               },
-              "/Users/Jamie.White/Repos/eShopOnWeb/src/Infrastructure/Infrastructure.csproj": {
-                "projectPath": "/Users/Jamie.White/Repos/eShopOnWeb/src/Infrastructure/Infrastructure.csproj"
+              "/Users/jamie.white@postman.com/Repos/eShopOnWeb/src/Infrastructure/Infrastructure.csproj": {
+                "projectPath": "/Users/jamie.white@postman.com/Repos/eShopOnWeb/src/Infrastructure/Infrastructure.csproj"
               }
             }
           }
@@ -912,10 +949,11 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "10.0.300"
       },
       "frameworks": {
         "net8.0": {
+          "framework": "net8.0",
           "targetAlias": "net8.0",
           "dependencies": {
             "Ardalis.ListStartupServices": {
@@ -1021,6 +1059,8 @@
             "BuildBundlerMinifier": "3.2.449",
             "coverlet.collector": "6.0.2",
             "FluentValidation": "11.9.0",
+            "iTextSharp": "5.5.13.4",
+            "JsonLogic.Net": "1.1.11",
             "MediatR": "12.0.1",
             "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.2",
             "Microsoft.AspNetCore.Components.Authorization": "8.0.2",
@@ -1072,15 +1112,15 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[8.0.16, 8.0.16]"
+              "version": "[8.0.29, 8.0.29]"
             },
             {
               "name": "Microsoft.NETCore.App.Host.osx-arm64",
-              "version": "[8.0.16, 8.0.16]"
+              "version": "[8.0.29, 8.0.29]"
             },
             {
               "name": "Microsoft.NETCore.App.Ref",
-              "version": "[8.0.16, 8.0.16]"
+              "version": "[8.0.29, 8.0.29]"
             }
           ],
           "frameworkReferences": {
@@ -1091,41 +1131,43 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/dotnet/sdk/9.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/opt/homebrew/Cellar/dotnet/10.0.302/libexec/sdk/10.0.302/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/Jamie.White/Repos/eShopOnWeb/tests/FunctionalTests/FunctionalTests.csproj": {
+    "/Users/jamie.white@postman.com/Repos/eShopOnWeb/tests/FunctionalTests/FunctionalTests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/Jamie.White/Repos/eShopOnWeb/tests/FunctionalTests/FunctionalTests.csproj",
+        "projectUniqueName": "/Users/jamie.white@postman.com/Repos/eShopOnWeb/tests/FunctionalTests/FunctionalTests.csproj",
         "projectName": "FunctionalTests",
-        "projectPath": "/Users/Jamie.White/Repos/eShopOnWeb/tests/FunctionalTests/FunctionalTests.csproj",
-        "packagesPath": "/Users/Jamie.White/.nuget/packages/",
-        "outputPath": "/Users/Jamie.White/Repos/eShopOnWeb/tests/FunctionalTests/obj/",
+        "projectPath": "/Users/jamie.white@postman.com/Repos/eShopOnWeb/tests/FunctionalTests/FunctionalTests.csproj",
+        "packagesPath": "/Users/jamie.white@postman.com/.nuget/packages/",
+        "outputPath": "/Users/jamie.white@postman.com/Repos/eShopOnWeb/tests/FunctionalTests/obj/",
         "projectStyle": "PackageReference",
         "centralPackageVersionsManagementEnabled": true,
         "configFilePaths": [
-          "/Users/Jamie.White/.nuget/NuGet/NuGet.Config"
+          "/Users/jamie.white@postman.com/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "/opt/homebrew/Cellar/dotnet/10.0.302/libexec/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
+            "framework": "net8.0",
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/Users/Jamie.White/Repos/eShopOnWeb/src/ApplicationCore/ApplicationCore.csproj": {
-                "projectPath": "/Users/Jamie.White/Repos/eShopOnWeb/src/ApplicationCore/ApplicationCore.csproj"
+              "/Users/jamie.white@postman.com/Repos/eShopOnWeb/src/ApplicationCore/ApplicationCore.csproj": {
+                "projectPath": "/Users/jamie.white@postman.com/Repos/eShopOnWeb/src/ApplicationCore/ApplicationCore.csproj"
               },
-              "/Users/Jamie.White/Repos/eShopOnWeb/src/PublicApi/PublicApi.csproj": {
-                "projectPath": "/Users/Jamie.White/Repos/eShopOnWeb/src/PublicApi/PublicApi.csproj"
+              "/Users/jamie.white@postman.com/Repos/eShopOnWeb/src/PublicApi/PublicApi.csproj": {
+                "projectPath": "/Users/jamie.white@postman.com/Repos/eShopOnWeb/src/PublicApi/PublicApi.csproj"
               },
-              "/Users/Jamie.White/Repos/eShopOnWeb/src/Web/Web.csproj": {
-                "projectPath": "/Users/Jamie.White/Repos/eShopOnWeb/src/Web/Web.csproj"
+              "/Users/jamie.white@postman.com/Repos/eShopOnWeb/src/Web/Web.csproj": {
+                "projectPath": "/Users/jamie.white@postman.com/Repos/eShopOnWeb/src/Web/Web.csproj"
               }
             }
           }
@@ -1140,10 +1182,11 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "10.0.300"
       },
       "frameworks": {
         "net8.0": {
+          "framework": "net8.0",
           "targetAlias": "net8.0",
           "dependencies": {
             "Microsoft.AspNetCore.Mvc.Testing": {
@@ -1187,6 +1230,8 @@
             "BuildBundlerMinifier": "3.2.449",
             "coverlet.collector": "6.0.2",
             "FluentValidation": "11.9.0",
+            "iTextSharp": "5.5.13.4",
+            "JsonLogic.Net": "1.1.11",
             "MediatR": "12.0.1",
             "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.2",
             "Microsoft.AspNetCore.Components.Authorization": "8.0.2",
@@ -1238,11 +1283,11 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[8.0.16, 8.0.16]"
+              "version": "[8.0.29, 8.0.29]"
             },
             {
               "name": "Microsoft.NETCore.App.Ref",
-              "version": "[8.0.16, 8.0.16]"
+              "version": "[8.0.29, 8.0.29]"
             }
           ],
           "frameworkReferences": {
@@ -1250,7 +1295,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/dotnet/sdk/9.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/opt/homebrew/Cellar/dotnet/10.0.302/libexec/sdk/10.0.302/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

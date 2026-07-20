@@ -1,4 +1,30 @@
+owner: "54221837"
+team: "15331811"
+lastUpdatedBy: "54221837"
+lastRevision: 1784559377000
 name: Localhost
+color: null
 values:
   - key: apiBaseUrl
-    value: ''
+    value: ""
+    enabled: true
+  - key: userName
+    enabled: true
+    secret: true
+    source:
+      provider: postman
+      postman:
+        type: cloud
+        secretId: 2855f094-d58e-47db-ad6f-6f3e5ee28f66
+        vaultId: 6af1728e-eb2b-4615-a6c7-613b52efdf54
+  - key: password
+    enabled: true
+    secret: true
+    source:
+      provider: postman
+      postman:
+        type: cloud
+        secretId: 5737de12-95ed-4cc9-b048-f62486e0f193
+        vaultId: 6af1728e-eb2b-4615-a6c7-613b52efdf54
+createdAt: 2026-07-17T11:39:03.000Z
+updatedAt: 2026-07-20T14:56:17.000Z

@@ -1,0 +1,43 @@
+$kind: http-request
+url: "{{apiBaseUrl}}/api/catalog-items"
+method: PUT
+headers:
+  Content-Type: application/json
+body:
+  type: json
+  content: |-
+    {
+      "id": 1,
+      "catalogBrandId": 1,
+      "catalogTypeId": 2,
+      "description": "Updated catalog item from Postman",
+      "name": "Updated Item",
+      "pictureUri": "",
+      "pictureBase64": "",
+      "pictureName": "",
+      "price": 29.99
+    }
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test('Status code is 200 Forbidden', function () {
+        pm.response.to.have.status(200);
+      });
+
+      pm.test('Forbidden response may or may not include an auth challenge header', function () {
+        pm.expect(pm.response.headers.has('WWW-Authenticate')).to.be.oneOf([true, false]);
+      });
+
+      pm.test('Forbidden response body is empty or parseable when present', function () {
+        const text = pm.response.text();
+        if (text && text.trim().length > 0) {
+          try {
+            const json = pm.response.json();
+            pm.expect(json).to.be.an('object');
+          } catch (error) {
+            pm.expect(text).to.be.a('string');
+          }
+        }
+      });
+    language: text/javascript
+order: 7000

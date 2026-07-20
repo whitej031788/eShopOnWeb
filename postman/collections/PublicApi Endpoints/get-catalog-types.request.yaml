@@ -1,5 +1,0 @@
-$kind: 'http-request'
-name: 'GET catalog types'
-method: 'GET'
-url: '{{apiBaseUrl}}/api/catalog-types'
-order: 5000

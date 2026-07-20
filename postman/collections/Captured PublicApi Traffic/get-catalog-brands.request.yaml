@@ -1,8 +1,0 @@
-version: '3'
-name: 'GET catalog brands'
-type: 'request'
-request:
-  method: 'GET'
-  url: '{{apiBaseUrl}}/api/catalog-brands'
-  auth:
-    type: 'noauth'

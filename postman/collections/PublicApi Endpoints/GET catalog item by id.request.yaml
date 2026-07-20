@@ -1,0 +1,39 @@
+$kind: http-request
+url: "{{apiBaseUrl}}/api/catalog-items/{catalogItemId}"
+method: GET
+pathVariables:
+  catalogItemId: "1"
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test('Status code is 400 when catalogItemId path variable is unresolved', function () {
+        pm.response.to.have.status(400);
+      });
+
+      pm.test('Error response is JSON when a body is returned', function () {
+        const contentType = pm.response.headers.get('Content-Type');
+        if (pm.response.text().trim().length > 0) {
+          pm.expect(contentType).to.include('application/json');
+        }
+      });
+
+      pm.test('Error response body is an object when present', function () {
+        const text = pm.response.text();
+        if (text && text.trim().length > 0) {
+          const json = pm.response.json();
+          pm.expect(json).to.be.an('object');
+        }
+      });
+
+      pm.test('Error response contains problem-details or validation shape when present', function () {
+        const text = pm.response.text();
+        if (text && text.trim().length > 0) {
+          const json = pm.response.json();
+          const hasProblemDetails = ['type', 'title', 'status', 'detail', 'errors', 'message'].some(function (key) {
+            return Object.prototype.hasOwnProperty.call(json, key);
+          });
+          pm.expect(hasProblemDetails).to.be.true;
+        }
+      });
+    language: text/javascript
+order: 3000

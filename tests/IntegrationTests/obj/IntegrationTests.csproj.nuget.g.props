@@ -4,13 +4,13 @@
     <RestoreSuccess Condition=" '$(RestoreSuccess)' == '' ">True</RestoreSuccess>
     <RestoreTool Condition=" '$(RestoreTool)' == '' ">NuGet</RestoreTool>
     <ProjectAssetsFile Condition=" '$(ProjectAssetsFile)' == '' ">$(MSBuildThisFileDirectory)project.assets.json</ProjectAssetsFile>
-    <NuGetPackageRoot Condition=" '$(NuGetPackageRoot)' == '' ">/Users/Jamie.White/.nuget/packages/</NuGetPackageRoot>
-    <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">/Users/Jamie.White/.nuget/packages/</NuGetPackageFolders>
+    <NuGetPackageRoot Condition=" '$(NuGetPackageRoot)' == '' ">/Users/jamie.white@postman.com/.nuget/packages/</NuGetPackageRoot>
+    <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">/Users/jamie.white@postman.com/.nuget/packages/</NuGetPackageFolders>
     <NuGetProjectStyle Condition=" '$(NuGetProjectStyle)' == '' ">PackageReference</NuGetProjectStyle>
-    <NuGetToolVersion Condition=" '$(NuGetToolVersion)' == '' ">6.14.0</NuGetToolVersion>
+    <NuGetToolVersion Condition=" '$(NuGetToolVersion)' == '' ">7.0.0</NuGetToolVersion>
   </PropertyGroup>
   <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <SourceRoot Include="/Users/Jamie.White/.nuget/packages/" />
+    <SourceRoot Include="/Users/jamie.white@postman.com/.nuget/packages/" />
   </ItemGroup>
   <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <Import Project="$(NuGetPackageRoot)xunit.runner.visualstudio/2.5.6/build/net6.0/xunit.runner.visualstudio.props" Condition="Exists('$(NuGetPackageRoot)xunit.runner.visualstudio/2.5.6/build/net6.0/xunit.runner.visualstudio.props')" />
@@ -24,13 +24,13 @@
     <Import Project="$(NuGetPackageRoot)microsoft.net.test.sdk/17.9.0/build/netcoreapp3.1/Microsoft.NET.Test.Sdk.props" Condition="Exists('$(NuGetPackageRoot)microsoft.net.test.sdk/17.9.0/build/netcoreapp3.1/Microsoft.NET.Test.Sdk.props')" />
   </ImportGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <Pkgxunit_runner_console Condition=" '$(Pkgxunit_runner_console)' == '' ">/Users/Jamie.White/.nuget/packages/xunit.runner.console/2.7.0</Pkgxunit_runner_console>
-    <Pkgxunit_analyzers Condition=" '$(Pkgxunit_analyzers)' == '' ">/Users/Jamie.White/.nuget/packages/xunit.analyzers/1.11.0</Pkgxunit_analyzers>
-    <PkgMicrosoft_Web_LibraryManager_Build Condition=" '$(PkgMicrosoft_Web_LibraryManager_Build)' == '' ">/Users/Jamie.White/.nuget/packages/microsoft.web.librarymanager.build/2.1.175</PkgMicrosoft_Web_LibraryManager_Build>
-    <PkgMicrosoft_CodeAnalysis_Analyzers Condition=" '$(PkgMicrosoft_CodeAnalysis_Analyzers)' == '' ">/Users/Jamie.White/.nuget/packages/microsoft.codeanalysis.analyzers/3.3.4</PkgMicrosoft_CodeAnalysis_Analyzers>
-    <PkgMicrosoft_CodeAnalysis_AnalyzerUtilities Condition=" '$(PkgMicrosoft_CodeAnalysis_AnalyzerUtilities)' == '' ">/Users/Jamie.White/.nuget/packages/microsoft.codeanalysis.analyzerutilities/3.3.0</PkgMicrosoft_CodeAnalysis_AnalyzerUtilities>
-    <PkgMicrosoft_AspNetCore_Components_WebAssembly_Server Condition=" '$(PkgMicrosoft_AspNetCore_Components_WebAssembly_Server)' == '' ">/Users/Jamie.White/.nuget/packages/microsoft.aspnetcore.components.webassembly.server/8.0.2</PkgMicrosoft_AspNetCore_Components_WebAssembly_Server>
-    <PkgMicrosoft_AspNetCore_Components_WebAssembly_DevServer Condition=" '$(PkgMicrosoft_AspNetCore_Components_WebAssembly_DevServer)' == '' ">/Users/Jamie.White/.nuget/packages/microsoft.aspnetcore.components.webassembly.devserver/8.0.2</PkgMicrosoft_AspNetCore_Components_WebAssembly_DevServer>
-    <PkgNSubstitute_Analyzers_CSharp Condition=" '$(PkgNSubstitute_Analyzers_CSharp)' == '' ">/Users/Jamie.White/.nuget/packages/nsubstitute.analyzers.csharp/1.0.17</PkgNSubstitute_Analyzers_CSharp>
+    <Pkgxunit_runner_console Condition=" '$(Pkgxunit_runner_console)' == '' ">/Users/jamie.white@postman.com/.nuget/packages/xunit.runner.console/2.7.0</Pkgxunit_runner_console>
+    <Pkgxunit_analyzers Condition=" '$(Pkgxunit_analyzers)' == '' ">/Users/jamie.white@postman.com/.nuget/packages/xunit.analyzers/1.11.0</Pkgxunit_analyzers>
+    <PkgMicrosoft_Web_LibraryManager_Build Condition=" '$(PkgMicrosoft_Web_LibraryManager_Build)' == '' ">/Users/jamie.white@postman.com/.nuget/packages/microsoft.web.librarymanager.build/2.1.175</PkgMicrosoft_Web_LibraryManager_Build>
+    <PkgMicrosoft_CodeAnalysis_Analyzers Condition=" '$(PkgMicrosoft_CodeAnalysis_Analyzers)' == '' ">/Users/jamie.white@postman.com/.nuget/packages/microsoft.codeanalysis.analyzers/3.3.4</PkgMicrosoft_CodeAnalysis_Analyzers>
+    <PkgMicrosoft_CodeAnalysis_AnalyzerUtilities Condition=" '$(PkgMicrosoft_CodeAnalysis_AnalyzerUtilities)' == '' ">/Users/jamie.white@postman.com/.nuget/packages/microsoft.codeanalysis.analyzerutilities/3.3.0</PkgMicrosoft_CodeAnalysis_AnalyzerUtilities>
+    <PkgMicrosoft_AspNetCore_Components_WebAssembly_Server Condition=" '$(PkgMicrosoft_AspNetCore_Components_WebAssembly_Server)' == '' ">/Users/jamie.white@postman.com/.nuget/packages/microsoft.aspnetcore.components.webassembly.server/8.0.2</PkgMicrosoft_AspNetCore_Components_WebAssembly_Server>
+    <PkgMicrosoft_AspNetCore_Components_WebAssembly_DevServer Condition=" '$(PkgMicrosoft_AspNetCore_Components_WebAssembly_DevServer)' == '' ">/Users/jamie.white@postman.com/.nuget/packages/microsoft.aspnetcore.components.webassembly.devserver/8.0.2</PkgMicrosoft_AspNetCore_Components_WebAssembly_DevServer>
+    <PkgNSubstitute_Analyzers_CSharp Condition=" '$(PkgNSubstitute_Analyzers_CSharp)' == '' ">/Users/jamie.white@postman.com/.nuget/packages/nsubstitute.analyzers.csharp/1.0.17</PkgNSubstitute_Analyzers_CSharp>
   </PropertyGroup>
 </Project>

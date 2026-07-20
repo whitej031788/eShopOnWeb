@@ -1,5 +1,5 @@
 {
-  "version": 3,
+  "version": 4,
   "targets": {
     "net8.0": {
       "Ardalis.ApiEndpoints/4.1.0": {
@@ -229,6 +229,19 @@
         },
         "buildMultiTargeting": {
           "buildMultiTargeting/BlazorInputFile.props": {}
+        }
+      },
+      "BouncyCastle.Cryptography/2.4.0": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/BouncyCastle.Cryptography.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/BouncyCastle.Cryptography.dll": {
+            "related": ".xml"
+          }
         }
       },
       "FluentValidation/11.9.0": {
@@ -838,6 +851,18 @@
           }
         }
       },
+      "iTextSharp/5.5.13.4": {
+        "type": "package",
+        "dependencies": {
+          "BouncyCastle.Cryptography": "2.4.0"
+        },
+        "compile": {
+          "lib/net461/itextsharp.dll": {}
+        },
+        "runtime": {
+          "lib/net461/itextsharp.dll": {}
+        }
+      },
       "JetBrains.Annotations/2021.3.0": {
         "type": "package",
         "compile": {
@@ -849,6 +874,18 @@
           "lib/netstandard2.0/JetBrains.Annotations.dll": {
             "related": ".deps.json;.xml"
           }
+        }
+      },
+      "JsonLogic.Net/1.1.11": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "9.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.1/JsonLogic.Net.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/JsonLogic.Net.dll": {}
         }
       },
       "MediatR/12.0.1": {
@@ -4593,8 +4630,10 @@
           "Ardalis.Result": "7.0.0",
           "Ardalis.Specification": "7.0.0",
           "BlazorShared": "1.0.0",
+          "JsonLogic.Net": "1.1.11",
           "System.Security.Claims": "4.3.0",
-          "System.Text.Json": "8.0.3"
+          "System.Text.Json": "8.0.3",
+          "iTextSharp": "5.5.13.4"
         },
         "compile": {
           "bin/placeholder/ApplicationCore.dll": {}
@@ -4966,6 +5005,26 @@
         "lib/netstandard2.0/BlazorInputFile.dll",
         "lib/netstandard2.1/BlazorInputFile.dll",
         "staticwebassets/inputfile.js"
+      ]
+    },
+    "BouncyCastle.Cryptography/2.4.0": {
+      "sha512": "SwXsAV3sMvAU/Nn31pbjhWurYSjJ+/giI/0n6tCrYoupEK34iIHCuk3STAd9fx8yudM85KkLSVdn951vTng/vQ==",
+      "type": "package",
+      "path": "bouncycastle.cryptography/2.4.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "README.md",
+        "bouncycastle.cryptography.2.4.0.nupkg.sha512",
+        "bouncycastle.cryptography.nuspec",
+        "lib/net461/BouncyCastle.Cryptography.dll",
+        "lib/net461/BouncyCastle.Cryptography.xml",
+        "lib/net6.0/BouncyCastle.Cryptography.dll",
+        "lib/net6.0/BouncyCastle.Cryptography.xml",
+        "lib/netstandard2.0/BouncyCastle.Cryptography.dll",
+        "lib/netstandard2.0/BouncyCastle.Cryptography.xml",
+        "packageIcon.png"
       ]
     },
     "FluentValidation/11.9.0": {
@@ -5739,6 +5798,22 @@
         "logo.png"
       ]
     },
+    "iTextSharp/5.5.13.4": {
+      "sha512": "/cvCNv8AJ+XuD99u4NfHSSxkBJKTdvP36wcfQF9V1Cjzi1ycyFSa4vJ64a3DhFVUTKVO60WF8OmAqngQDTHgYA==",
+      "type": "package",
+      "path": "itextsharp/5.5.13.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "gnu-agpl-v3.0.md",
+        "itextsharp.5.5.13.4.nupkg.sha512",
+        "itextsharp.nuspec",
+        "lib/net461/iTextSharp.xml",
+        "lib/net461/itextsharp.dll",
+        "notice.txt"
+      ]
+    },
     "JetBrains.Annotations/2021.3.0": {
       "sha512": "Ddxjs5RRjf+c8m9m++WvhW1lz1bqNhsTjWvCLbQN9bvKbkJeR9MhtfNwKgBRRdG2yLHcXFr5Lf7fsvvkiPaDRg==",
       "type": "package",
@@ -5759,6 +5834,20 @@
         "lib/netstandard2.0/JetBrains.Annotations.xml",
         "lib/portable40-net40+sl5+win8+wp8+wpa81/JetBrains.Annotations.dll",
         "lib/portable40-net40+sl5+win8+wp8+wpa81/JetBrains.Annotations.xml"
+      ]
+    },
+    "JsonLogic.Net/1.1.11": {
+      "sha512": "fb9BbHs8Xnn0UDzoRPYBEigZ4UUcfyZIvXibok1wYsq/LBvB2RXvrcKjTlVp31/zDnPvULxSgaq0Di14SfQ6RQ==",
+      "type": "package",
+      "path": "jsonlogic.net/1.1.11",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "jsonlogic.net.1.1.11.nupkg.sha512",
+        "jsonlogic.net.nuspec",
+        "lib/netstandard1.0/JsonLogic.Net.dll",
+        "lib/netstandard2.0/JsonLogic.Net.dll",
+        "lib/netstandard2.1/JsonLogic.Net.dll"
       ]
     },
     "MediatR/12.0.1": {
@@ -13072,39 +13161,41 @@
     ]
   },
   "packageFolders": {
-    "/Users/Jamie.White/.nuget/packages/": {}
+    "/Users/jamie.white@postman.com/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/Jamie.White/Repos/eShopOnWeb/tests/FunctionalTests/FunctionalTests.csproj",
+      "projectUniqueName": "/Users/jamie.white@postman.com/Repos/eShopOnWeb/tests/FunctionalTests/FunctionalTests.csproj",
       "projectName": "FunctionalTests",
-      "projectPath": "/Users/Jamie.White/Repos/eShopOnWeb/tests/FunctionalTests/FunctionalTests.csproj",
-      "packagesPath": "/Users/Jamie.White/.nuget/packages/",
-      "outputPath": "/Users/Jamie.White/Repos/eShopOnWeb/tests/FunctionalTests/obj/",
+      "projectPath": "/Users/jamie.white@postman.com/Repos/eShopOnWeb/tests/FunctionalTests/FunctionalTests.csproj",
+      "packagesPath": "/Users/jamie.white@postman.com/.nuget/packages/",
+      "outputPath": "/Users/jamie.white@postman.com/Repos/eShopOnWeb/tests/FunctionalTests/obj/",
       "projectStyle": "PackageReference",
       "centralPackageVersionsManagementEnabled": true,
       "configFilePaths": [
-        "/Users/Jamie.White/.nuget/NuGet/NuGet.Config"
+        "/Users/jamie.white@postman.com/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
+        "/opt/homebrew/Cellar/dotnet/10.0.302/libexec/library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
+          "framework": "net8.0",
           "targetAlias": "net8.0",
           "projectReferences": {
-            "/Users/Jamie.White/Repos/eShopOnWeb/src/ApplicationCore/ApplicationCore.csproj": {
-              "projectPath": "/Users/Jamie.White/Repos/eShopOnWeb/src/ApplicationCore/ApplicationCore.csproj"
+            "/Users/jamie.white@postman.com/Repos/eShopOnWeb/src/ApplicationCore/ApplicationCore.csproj": {
+              "projectPath": "/Users/jamie.white@postman.com/Repos/eShopOnWeb/src/ApplicationCore/ApplicationCore.csproj"
             },
-            "/Users/Jamie.White/Repos/eShopOnWeb/src/PublicApi/PublicApi.csproj": {
-              "projectPath": "/Users/Jamie.White/Repos/eShopOnWeb/src/PublicApi/PublicApi.csproj"
+            "/Users/jamie.white@postman.com/Repos/eShopOnWeb/src/PublicApi/PublicApi.csproj": {
+              "projectPath": "/Users/jamie.white@postman.com/Repos/eShopOnWeb/src/PublicApi/PublicApi.csproj"
             },
-            "/Users/Jamie.White/Repos/eShopOnWeb/src/Web/Web.csproj": {
-              "projectPath": "/Users/Jamie.White/Repos/eShopOnWeb/src/Web/Web.csproj"
+            "/Users/jamie.white@postman.com/Repos/eShopOnWeb/src/Web/Web.csproj": {
+              "projectPath": "/Users/jamie.white@postman.com/Repos/eShopOnWeb/src/Web/Web.csproj"
             }
           }
         }
@@ -13119,10 +13210,11 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.300"
+      "SdkAnalysisLevel": "10.0.300"
     },
     "frameworks": {
       "net8.0": {
+        "framework": "net8.0",
         "targetAlias": "net8.0",
         "dependencies": {
           "Microsoft.AspNetCore.Mvc.Testing": {
@@ -13166,6 +13258,8 @@
           "BuildBundlerMinifier": "3.2.449",
           "coverlet.collector": "6.0.2",
           "FluentValidation": "11.9.0",
+          "iTextSharp": "5.5.13.4",
+          "JsonLogic.Net": "1.1.11",
           "MediatR": "12.0.1",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.2",
           "Microsoft.AspNetCore.Components.Authorization": "8.0.2",
@@ -13217,11 +13311,11 @@
         "downloadDependencies": [
           {
             "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[8.0.16, 8.0.16]"
+            "version": "[8.0.29, 8.0.29]"
           },
           {
             "name": "Microsoft.NETCore.App.Ref",
-            "version": "[8.0.16, 8.0.16]"
+            "version": "[8.0.29, 8.0.29]"
           }
         ],
         "frameworkReferences": {
@@ -13229,8 +13323,20 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/dotnet/sdk/9.0.300/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/opt/homebrew/Cellar/dotnet/10.0.302/libexec/sdk/10.0.302/PortableRuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'iTextSharp 5.5.13.4' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.",
+      "libraryId": "iTextSharp",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
 }

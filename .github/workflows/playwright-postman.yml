@@ -1,0 +1,73 @@
+name: Playwright (Postman)
+
+# Runs the Playwright E2E suite through the Postman CLI so captured API
+# traffic is analysed against the Postman collections (postman-playwright
+# plugin is wired into e2e/playwright.config.ts via withPostman).
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  playwright:
+    name: Playwright via Postman
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Start app (docker compose)
+        run: docker compose up -d --build
+
+      - name: Wait for storefront and PublicApi to be ready
+        run: |
+          echo "Waiting for services to come up (DB seeding can take a while)..."
+          for i in $(seq 1 60); do
+            web=$(curl -sk -o /dev/null -w "%{http_code}" http://localhost:5106 || echo 000)
+            api=$(curl -sk -o /dev/null -w "%{http_code}" http://localhost:5200/api/catalog-items || echo 000)
+            echo "attempt $i: web=$web api=$api"
+            if [ "$web" = "200" ] && [ "$api" = "200" ]; then
+              echo "Services are up."
+              exit 0
+            fi
+            sleep 5
+          done
+          echo "::error::Services did not become ready in time"
+          docker compose logs
+          exit 1
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install e2e dependencies
+        run: npm ci --prefix e2e || npm install --prefix e2e
+
+      - name: Install Playwright browsers
+        run: npm --prefix e2e exec -- playwright install --with-deps chromium
+
+      - name: Install Postman CLI
+        run: curl -o- "https://dl-cli.pstmn.io/install/linux64.sh" | sh
+
+      - name: Log in to Postman
+        run: postman login --with-api-key "${{ secrets.POSTMAN_API_KEY }}"
+
+      - name: Run Playwright tests via Postman CLI
+        run: postman application test
+
+      - name: Upload Playwright report
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: |
+            e2e/playwright-report
+            e2e/test-results
+          retention-days: 30
+
+      - name: Tear down docker compose
+        if: always()
+        run: docker compose down -v

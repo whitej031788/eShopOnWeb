@@ -25,5 +25,8 @@ export async function addFirstProductToBasket(page: Page): Promise<string> {
   const name = (await firstCard.locator('.esh-catalog-name span').innerText()).trim();
   await firstCard.locator('input[value="[ ADD TO BASKET ]"]').click();
   await expect(page).toHaveURL(/\/Basket/i);
+  // Confirm the item actually landed in the basket before returning, so callers
+  // (e.g. checkout) never proceed against a not-yet-settled/empty basket.
+  await expect(page.getByText(name, { exact: false }).first()).toBeVisible();
   return name;
 }

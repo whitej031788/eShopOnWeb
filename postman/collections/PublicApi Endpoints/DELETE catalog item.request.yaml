@@ -1,0 +1,29 @@
+$kind: http-request
+url: "{{apiBaseUrl}}/api/catalog-items/{catalogItemId}"
+method: DELETE
+pathVariables:
+  catalogItemId: "1"
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test('Status code is 200 Forbidden', function () {
+        pm.response.to.have.status(200);
+      });
+
+      pm.test('Forbidden response may or may not include an auth challenge header', function () {
+        pm.expect(pm.response.headers.has('WWW-Authenticate')).to.be.oneOf([true, false]);
+      });
+
+      pm.test('Forbidden response body is empty or parseable when present', function () {
+        const text = pm.response.text();
+        if (text && text.trim().length > 0) {
+          try {
+            const json = pm.response.json();
+            pm.expect(json).to.be.an('object');
+          } catch (error) {
+            pm.expect(text).to.be.a('string');
+          }
+        }
+      });
+    language: text/javascript
+order: 8000

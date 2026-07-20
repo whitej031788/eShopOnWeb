@@ -1,8 +1,0 @@
-$kind: 'http-request'
-name: 'DELETE catalog item'
-method: 'DELETE'
-url: '{{apiBaseUrl}}/api/catalog-items/{catalogItemId}'
-order: 8000
-pathVariables:
-  - key: 'catalogItemId'
-    value: '1'

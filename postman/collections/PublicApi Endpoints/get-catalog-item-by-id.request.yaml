@@ -1,8 +1,0 @@
-$kind: 'http-request'
-name: 'GET catalog item by id'
-method: 'GET'
-url: '{{apiBaseUrl}}/api/catalog-items/{catalogItemId}'
-order: 3000
-pathVariables:
-  - key: 'catalogItemId'
-    value: '1'

@@ -1,8 +1,10 @@
 $kind: collection
-name: PublicApi Endpoints
+description: ""
 variables:
   jwtToken: ""
 auth:
-  type: bearer
-  credentials:
-    token: "{{jwtToken}}"
+  - id: 56a1e9a0-7ca4-4562-be69-19145bf87927
+    type: bearer
+    name: bearer auth
+    credentials:
+      token: "{{jwtToken}}"

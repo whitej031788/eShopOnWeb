@@ -1,8 +1,0 @@
-version: '3'
-name: 'GET catalog items (paged)'
-type: 'request'
-request:
-  method: 'GET'
-  url: '{{apiBaseUrl}}/api/catalog-items?pageSize=10&pageIndex=0'
-  auth:
-    type: 'noauth'

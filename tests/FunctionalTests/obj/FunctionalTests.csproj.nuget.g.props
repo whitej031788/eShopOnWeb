@@ -4,13 +4,13 @@
     <RestoreSuccess Condition=" '$(RestoreSuccess)' == '' ">True</RestoreSuccess>
     <RestoreTool Condition=" '$(RestoreTool)' == '' ">NuGet</RestoreTool>
     <ProjectAssetsFile Condition=" '$(ProjectAssetsFile)' == '' ">$(MSBuildThisFileDirectory)project.assets.json</ProjectAssetsFile>
-    <NuGetPackageRoot Condition=" '$(NuGetPackageRoot)' == '' ">/Users/Jamie.White/.nuget/packages/</NuGetPackageRoot>
-    <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">/Users/Jamie.White/.nuget/packages/</NuGetPackageFolders>
+    <NuGetPackageRoot Condition=" '$(NuGetPackageRoot)' == '' ">/Users/jamie.white@postman.com/.nuget/packages/</NuGetPackageRoot>
+    <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">/Users/jamie.white@postman.com/.nuget/packages/</NuGetPackageFolders>
     <NuGetProjectStyle Condition=" '$(NuGetProjectStyle)' == '' ">PackageReference</NuGetProjectStyle>
-    <NuGetToolVersion Condition=" '$(NuGetToolVersion)' == '' ">6.14.0</NuGetToolVersion>
+    <NuGetToolVersion Condition=" '$(NuGetToolVersion)' == '' ">7.0.0</NuGetToolVersion>
   </PropertyGroup>
   <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <SourceRoot Include="/Users/Jamie.White/.nuget/packages/" />
+    <SourceRoot Include="/Users/jamie.white@postman.com/.nuget/packages/" />
   </ItemGroup>
   <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <Import Project="$(NuGetPackageRoot)xunit.runner.visualstudio/2.5.6/build/net6.0/xunit.runner.visualstudio.props" Condition="Exists('$(NuGetPackageRoot)xunit.runner.visualstudio/2.5.6/build/net6.0/xunit.runner.visualstudio.props')" />
@@ -25,14 +25,14 @@
     <Import Project="$(NuGetPackageRoot)microsoft.extensions.configuration.usersecrets/8.0.0/buildTransitive/net6.0/Microsoft.Extensions.Configuration.UserSecrets.props" Condition="Exists('$(NuGetPackageRoot)microsoft.extensions.configuration.usersecrets/8.0.0/buildTransitive/net6.0/Microsoft.Extensions.Configuration.UserSecrets.props')" />
   </ImportGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <Pkgxunit_analyzers Condition=" '$(Pkgxunit_analyzers)' == '' ">/Users/Jamie.White/.nuget/packages/xunit.analyzers/1.11.0</Pkgxunit_analyzers>
-    <PkgMicrosoft_Web_LibraryManager_Build Condition=" '$(PkgMicrosoft_Web_LibraryManager_Build)' == '' ">/Users/Jamie.White/.nuget/packages/microsoft.web.librarymanager.build/2.1.175</PkgMicrosoft_Web_LibraryManager_Build>
-    <PkgMicrosoft_CodeAnalysis_Analyzers Condition=" '$(PkgMicrosoft_CodeAnalysis_Analyzers)' == '' ">/Users/Jamie.White/.nuget/packages/microsoft.codeanalysis.analyzers/3.3.4</PkgMicrosoft_CodeAnalysis_Analyzers>
-    <PkgMicrosoft_CodeAnalysis_AnalyzerUtilities Condition=" '$(PkgMicrosoft_CodeAnalysis_AnalyzerUtilities)' == '' ">/Users/Jamie.White/.nuget/packages/microsoft.codeanalysis.analyzerutilities/3.3.0</PkgMicrosoft_CodeAnalysis_AnalyzerUtilities>
-    <PkgMicrosoft_AspNetCore_Components_WebAssembly_Server Condition=" '$(PkgMicrosoft_AspNetCore_Components_WebAssembly_Server)' == '' ">/Users/Jamie.White/.nuget/packages/microsoft.aspnetcore.components.webassembly.server/8.0.2</PkgMicrosoft_AspNetCore_Components_WebAssembly_Server>
-    <PkgMicrosoft_AspNetCore_Components_WebAssembly_DevServer Condition=" '$(PkgMicrosoft_AspNetCore_Components_WebAssembly_DevServer)' == '' ">/Users/Jamie.White/.nuget/packages/microsoft.aspnetcore.components.webassembly.devserver/8.0.2</PkgMicrosoft_AspNetCore_Components_WebAssembly_DevServer>
-    <PkgMicrosoft_Extensions_ApiDescription_Server Condition=" '$(PkgMicrosoft_Extensions_ApiDescription_Server)' == '' ">/Users/Jamie.White/.nuget/packages/microsoft.extensions.apidescription.server/6.0.5</PkgMicrosoft_Extensions_ApiDescription_Server>
-    <PkgMicrosoft_VisualStudio_Azure_Containers_Tools_Targets Condition=" '$(PkgMicrosoft_VisualStudio_Azure_Containers_Tools_Targets)' == '' ">/Users/Jamie.White/.nuget/packages/microsoft.visualstudio.azure.containers.tools.targets/1.19.6</PkgMicrosoft_VisualStudio_Azure_Containers_Tools_Targets>
-    <PkgArdalis_ApiEndpoints_CodeAnalyzers Condition=" '$(PkgArdalis_ApiEndpoints_CodeAnalyzers)' == '' ">/Users/Jamie.White/.nuget/packages/ardalis.apiendpoints.codeanalyzers/4.0.0</PkgArdalis_ApiEndpoints_CodeAnalyzers>
+    <Pkgxunit_analyzers Condition=" '$(Pkgxunit_analyzers)' == '' ">/Users/jamie.white@postman.com/.nuget/packages/xunit.analyzers/1.11.0</Pkgxunit_analyzers>
+    <PkgMicrosoft_Web_LibraryManager_Build Condition=" '$(PkgMicrosoft_Web_LibraryManager_Build)' == '' ">/Users/jamie.white@postman.com/.nuget/packages/microsoft.web.librarymanager.build/2.1.175</PkgMicrosoft_Web_LibraryManager_Build>
+    <PkgMicrosoft_CodeAnalysis_Analyzers Condition=" '$(PkgMicrosoft_CodeAnalysis_Analyzers)' == '' ">/Users/jamie.white@postman.com/.nuget/packages/microsoft.codeanalysis.analyzers/3.3.4</PkgMicrosoft_CodeAnalysis_Analyzers>
+    <PkgMicrosoft_CodeAnalysis_AnalyzerUtilities Condition=" '$(PkgMicrosoft_CodeAnalysis_AnalyzerUtilities)' == '' ">/Users/jamie.white@postman.com/.nuget/packages/microsoft.codeanalysis.analyzerutilities/3.3.0</PkgMicrosoft_CodeAnalysis_AnalyzerUtilities>
+    <PkgMicrosoft_AspNetCore_Components_WebAssembly_Server Condition=" '$(PkgMicrosoft_AspNetCore_Components_WebAssembly_Server)' == '' ">/Users/jamie.white@postman.com/.nuget/packages/microsoft.aspnetcore.components.webassembly.server/8.0.2</PkgMicrosoft_AspNetCore_Components_WebAssembly_Server>
+    <PkgMicrosoft_AspNetCore_Components_WebAssembly_DevServer Condition=" '$(PkgMicrosoft_AspNetCore_Components_WebAssembly_DevServer)' == '' ">/Users/jamie.white@postman.com/.nuget/packages/microsoft.aspnetcore.components.webassembly.devserver/8.0.2</PkgMicrosoft_AspNetCore_Components_WebAssembly_DevServer>
+    <PkgMicrosoft_Extensions_ApiDescription_Server Condition=" '$(PkgMicrosoft_Extensions_ApiDescription_Server)' == '' ">/Users/jamie.white@postman.com/.nuget/packages/microsoft.extensions.apidescription.server/6.0.5</PkgMicrosoft_Extensions_ApiDescription_Server>
+    <PkgMicrosoft_VisualStudio_Azure_Containers_Tools_Targets Condition=" '$(PkgMicrosoft_VisualStudio_Azure_Containers_Tools_Targets)' == '' ">/Users/jamie.white@postman.com/.nuget/packages/microsoft.visualstudio.azure.containers.tools.targets/1.19.6</PkgMicrosoft_VisualStudio_Azure_Containers_Tools_Targets>
+    <PkgArdalis_ApiEndpoints_CodeAnalyzers Condition=" '$(PkgArdalis_ApiEndpoints_CodeAnalyzers)' == '' ">/Users/jamie.white@postman.com/.nuget/packages/ardalis.apiendpoints.codeanalyzers/4.0.0</PkgArdalis_ApiEndpoints_CodeAnalyzers>
   </PropertyGroup>
 </Project>
