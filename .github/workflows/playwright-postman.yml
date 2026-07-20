@@ -56,7 +56,7 @@ jobs:
         run: postman login --with-api-key "${{ secrets.POSTMAN_API_KEY }}"
 
       - name: Run Playwright tests via Postman CLI
-        run: postman application test
+        run: postman application test --network-log e2e --report-events
 
       - name: Upload Playwright report
         if: ${{ !cancelled() }}

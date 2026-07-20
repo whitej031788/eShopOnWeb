@@ -1,0 +1,21 @@
+$kind: http-request
+url: "{{apiBaseUrl}}/api/catalog-items/:catalogItemId"
+method: GET
+pathVariables:
+  catalogItemId: "{{createdCatalogItemId}}"
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test('Status code is 404 after deletion', function () {
+        pm.response.to.have.status(404);
+      });
+
+      pm.test('The deleted item no longer returns a payload', function () {
+        const text = pm.response.text();
+        if (text && text.trim().length > 0) {
+          const json = pm.response.json();
+          pm.expect(json.catalogItem === undefined || json.catalogItem === null).to.be.true;
+        }
+      });
+    language: text/javascript
+order: 9000

@@ -1,0 +1,42 @@
+$kind: http-request
+url: "{{apiBaseUrl}}/api/catalog-items"
+method: PUT
+headers:
+  Content-Type: application/json
+body:
+  type: json
+  content: |-
+    {
+      "id": {{createdCatalogItemId}},
+      "catalogBrandId": 3,
+      "catalogTypeId": 3,
+      "description": "Updated by the Postman authorized-CRUD lifecycle",
+      "name": "{{newItemName}} (updated)",
+      "pictureUri": "",
+      "pictureBase64": "",
+      "pictureName": "",
+      "price": 42.42
+    }
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test('Status code is 200', function () {
+        pm.response.to.have.status(200);
+      });
+
+      pm.test('Response wraps the updated catalogItem', function () {
+        const json = pm.response.json();
+        pm.expect(json).to.have.property('catalogItem');
+        pm.expect(json.catalogItem).to.be.an('object');
+      });
+
+      pm.test('Updated fields are persisted', function () {
+        const item = pm.response.json().catalogItem;
+        pm.expect(String(item.id)).to.eql(String(pm.collectionVariables.get('createdCatalogItemId')));
+        pm.expect(item.name).to.eql(pm.collectionVariables.get('newItemName') + ' (updated)');
+        pm.expect(item.price).to.eql(42.42);
+        pm.expect(item.catalogBrandId).to.eql(3);
+        pm.expect(item.catalogTypeId).to.eql(3);
+      });
+    language: text/javascript
+order: 8800

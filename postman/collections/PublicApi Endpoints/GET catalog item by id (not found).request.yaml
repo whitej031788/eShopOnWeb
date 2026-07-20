@@ -1,0 +1,23 @@
+$kind: http-request
+url: "{{apiBaseUrl}}/api/catalog-items/:catalogItemId"
+method: GET
+pathVariables:
+  catalogItemId: "999999"
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test('Status code is 404 for a non-existent catalog item', function () {
+        pm.response.to.have.status(404);
+      });
+
+      pm.test('No catalog item payload is returned', function () {
+        const text = pm.response.text();
+        if (text && text.trim().length > 0) {
+          const json = pm.response.json();
+          pm.expect(json.catalogItem === undefined || json.catalogItem === null).to.be.true;
+        } else {
+          pm.expect(text.trim()).to.eql('');
+        }
+      });
+    language: text/javascript
+order: 3600

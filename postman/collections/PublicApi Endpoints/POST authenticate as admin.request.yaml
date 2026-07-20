@@ -1,0 +1,36 @@
+$kind: http-request
+url: "{{apiBaseUrl}}/api/authenticate"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: json
+  content: |-
+    {
+      "username": "admin@microsoft.com",
+      "password": "Pass@word1"
+    }
+auth:
+  type: noauth
+scripts:
+  - type: afterResponse
+    code: |-
+      // Authenticate as the seeded administrator so the subsequent write requests
+      // (create / update / delete) run with a token that carries the ADMINISTRATORS role.
+      pm.test('Status code is 200', function () {
+        pm.response.to.have.status(200);
+      });
+
+      pm.test('Admin authentication succeeded', function () {
+        const json = pm.response.json();
+        pm.expect(json.result).to.eql(true);
+        pm.expect(json.token).to.be.a('string').and.not.empty;
+      });
+
+      pm.test('Store admin token in collection variable jwtToken', function () {
+        const json = pm.response.json();
+        pm.collectionVariables.set('jwtToken', json.token);
+        pm.expect(pm.collectionVariables.get('jwtToken')).to.eql(json.token);
+      });
+    language: text/javascript
+order: 8500

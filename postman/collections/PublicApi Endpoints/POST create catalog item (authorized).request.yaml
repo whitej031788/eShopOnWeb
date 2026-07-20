@@ -1,0 +1,52 @@
+$kind: http-request
+url: "{{apiBaseUrl}}/api/catalog-items"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: json
+  content: |-
+    {
+      "catalogBrandId": 1,
+      "catalogTypeId": 2,
+      "description": "Created by the Postman authorized-CRUD lifecycle",
+      "name": "{{newItemName}}",
+      "pictureUri": "",
+      "pictureBase64": "",
+      "pictureName": "",
+      "price": 24.99
+    }
+scripts:
+  - type: beforeRequest
+    code: |-
+      // Unique name each run so the create never trips the duplicate-name guard.
+      pm.collectionVariables.set('newItemName', 'PM Catalog Item ' + Date.now());
+    language: text/javascript
+  - type: afterResponse
+    code: |-
+      // Inherits the collection's bearer auth ({{jwtToken}}), set by "POST authenticate as admin".
+      pm.test('Status code is 201 Created', function () {
+        pm.response.to.have.status(201);
+      });
+
+      pm.test('Response wraps the created catalogItem', function () {
+        const json = pm.response.json();
+        pm.expect(json).to.have.property('catalogItem');
+        pm.expect(json.catalogItem).to.be.an('object');
+      });
+
+      pm.test('Created item echoes the submitted name and has a real id', function () {
+        const item = pm.response.json().catalogItem;
+        pm.expect(item.id).to.be.a('number').and.to.be.above(0);
+        pm.expect(item.name).to.eql(pm.collectionVariables.get('newItemName'));
+        pm.expect(item.catalogBrandId).to.eql(1);
+        pm.expect(item.catalogTypeId).to.eql(2);
+      });
+
+      pm.test('Store created id in collection variable createdCatalogItemId', function () {
+        const item = pm.response.json().catalogItem;
+        pm.collectionVariables.set('createdCatalogItemId', item.id);
+        pm.expect(pm.collectionVariables.get('createdCatalogItemId')).to.eql(item.id);
+      });
+    language: text/javascript
+order: 8600
