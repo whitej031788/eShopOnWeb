@@ -1,0 +1,14 @@
+$kind: http-request
+url: "{{webBaseUrl}}/Basket/Update"
+method: POST
+body:
+  type: text
+  content: Items%5B0%5D.Id=1012&Items%5B0%5D.Quantity=3&updatebutton=&__RequestVerificationToken={{__RequestVerificationToken}}
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test('Request did not error (2xx or redirect)', function () {
+        pm.expect(pm.response.code).to.be.below(400);
+      });
+    language: text/javascript
+order: 4000

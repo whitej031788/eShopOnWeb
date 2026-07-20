@@ -1,0 +1,11 @@
+$kind: http-request
+url: "{{webBaseUrl}}/Basket/Checkout"
+method: GET
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test('Request did not error (2xx or redirect)', function () {
+        pm.expect(pm.response.code).to.be.below(400);
+      });
+    language: text/javascript
+order: 5000

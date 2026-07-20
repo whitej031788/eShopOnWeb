@@ -1,0 +1,14 @@
+$kind: http-request
+url: "{{webBaseUrl}}/Identity/Account/Login"
+method: POST
+body:
+  type: text
+  content: Input.Email={{userName}}&Input.Password={{password}}&__RequestVerificationToken={{__RequestVerificationToken}}&Input.RememberMe=false
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test('Request did not error (2xx or redirect)', function () {
+        pm.expect(pm.response.code).to.be.below(400);
+      });
+    language: text/javascript
+order: 9000

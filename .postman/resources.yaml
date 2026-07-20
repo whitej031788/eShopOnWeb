@@ -6,6 +6,7 @@ localResources:
 cloudResources:
   collections:
     ../postman/collections/PublicApi Endpoints: 54221837-33c58ed3-9233-483a-b666-4fac3545fecb
+    ../postman/collections/Storefront UI: 54221837-09dda086-b388-4cb3-8129-9fdbb4c1aa3a
   specs:
     ../openapi.yaml: be044d62-456f-42e0-87bf-7be5b23b1eb6
   environments:

@@ -1,0 +1,14 @@
+$kind: http-request
+url: "{{webBaseUrl}}/Basket/Checkout"
+method: POST
+body:
+  type: text
+  content: Items%5B0%5D.Id=1013&Items%5B0%5D.Quantity=1&__RequestVerificationToken={{__RequestVerificationToken}}
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test('Request did not error (2xx or redirect)', function () {
+        pm.expect(pm.response.code).to.be.below(400);
+      });
+    language: text/javascript
+order: 6000

@@ -14,6 +14,7 @@ module.exports = {
              environment: 'Localhost',
              collections: [
                  'PublicApi Endpoints',
+                 'Storefront UI',
          ],
         },
 
@@ -36,11 +37,21 @@ module.exports = {
 
     // Filters exclude matching network requests from analysis.
     // A request is dropped if it matches any rule below.
-    // filters: {
-    //     urlPatterns: ['\\.css$', '\\.svg$', 'analytics\\.example\\.com'],
-    //     methods: [],
-    //     headers: {},
-    // },
+    //
+    // We match two collections: the REST API on localhost:5200
+    // ("PublicApi Endpoints") and the Web storefront pages/form posts on
+    // localhost:5106 ("Storefront UI"). The only genuinely irrelevant traffic
+    // is static assets (CSS/JS/images/fonts) served by the storefront, so we
+    // drop just those and let the real HTML/API requests through to matching.
+    filters: {
+        urlPatterns: [
+            '\\.css$', '\\.js$',
+            '\\.png$', '\\.jpg$', '\\.jpeg$', '\\.svg$', '\\.ico$', '\\.gif$',
+            '\\.woff2?$', '\\.ttf$', '\\.eot$',
+        ],
+        methods: [],
+        headers: {},
+    },
 
     // Transformers rewrite proxied requests back to their real upstream URLs
     // so that captured traffic can be matched against your Postman collections.

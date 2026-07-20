@@ -1,0 +1,14 @@
+$kind: http-request
+url: "{{webBaseUrl}}/Basket"
+method: POST
+body:
+  type: text
+  content: id=1&name=.NET+Bot+Black+Sweatshirt&pictureUri=%2Fimages%2Fproducts%2F1.png&price=19.50&__RequestVerificationToken={{__RequestVerificationToken}}
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test('Request did not error (2xx or redirect)', function () {
+        pm.expect(pm.response.code).to.be.below(400);
+      });
+    language: text/javascript
+order: 3000

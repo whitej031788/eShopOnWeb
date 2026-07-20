@@ -1,0 +1,8 @@
+$kind: collection
+description: >-
+  Storefront (Web/MVC) pages and form posts served on localhost:5106, captured
+  from the Playwright UI tests. Kept separate from the PublicApi collection so
+  that UI traffic matches against these requests instead of showing as
+  "not matched".
+variables:
+  webBaseUrl: "{{webBaseUrl}}"
